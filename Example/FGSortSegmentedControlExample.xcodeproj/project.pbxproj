@@ -1,0 +1,300 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A118984715E09F1200DFF0C6 /* FGSortSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A118984615E09F1200DFF0C6 /* FGSortSegmentedControl.m */; };
+		A14659D015C319CB0059B6E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		A14659D115C319CB0059B6E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		A14659D215C319CB0059B6E1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		A1DDC14715E09FCA0027807A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DDC13C15E09FCA0027807A /* AppDelegate.m */; };
+		A1DDC14915E09FCA0027807A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1DDC14015E09FCA0027807A /* InfoPlist.strings */; };
+		A1DDC14B15E09FCA0027807A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DDC14415E09FCA0027807A /* main.m */; };
+		A1DDC14C15E09FCA0027807A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DDC14615E09FCA0027807A /* RootViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A118984515E09F1200DFF0C6 /* FGSortSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FGSortSegmentedControl.h; path = ../FGSortSegmentedControl/FGSortSegmentedControl.h; sourceTree = "<group>"; };
+		A118984615E09F1200DFF0C6 /* FGSortSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FGSortSegmentedControl.m; path = ../FGSortSegmentedControl/FGSortSegmentedControl.m; sourceTree = "<group>"; };
+		A14659CE15C319CB0059B6E1 /* FGSortSegmentedControlExampleExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FGSortSegmentedControlExampleExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1DDC13B15E09FCA0027807A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A1DDC13C15E09FCA0027807A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A1DDC14115E09FCA0027807A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A1DDC14215E09FCA0027807A /* FGSortSegmentedControlExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FGSortSegmentedControlExample-Info.plist"; sourceTree = "<group>"; };
+		A1DDC14315E09FCA0027807A /* FGSortSegmentedControlExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FGSortSegmentedControlExample-Prefix.pch"; sourceTree = "<group>"; };
+		A1DDC14415E09FCA0027807A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A1DDC14515E09FCA0027807A /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		A1DDC14615E09FCA0027807A /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A14659CB15C319CB0059B6E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A14659D015C319CB0059B6E1 /* UIKit.framework in Frameworks */,
+				A14659D115C319CB0059B6E1 /* Foundation.framework in Frameworks */,
+				A14659D215C319CB0059B6E1 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A14659CE15C319CB0059B6E1 /* FGSortSegmentedControlExampleExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				A118984C15E09F6F00DFF0C6 /* Example */,
+				A118984815E09F1700DFF0C6 /* FGSortSegmentedControl */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A118984815E09F1700DFF0C6 /* FGSortSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				A118984515E09F1200DFF0C6 /* FGSortSegmentedControl.h */,
+				A118984615E09F1200DFF0C6 /* FGSortSegmentedControl.m */,
+			);
+			name = FGSortSegmentedControl;
+			sourceTree = "<group>";
+		};
+		A118984C15E09F6F00DFF0C6 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				A1DDC13B15E09FCA0027807A /* AppDelegate.h */,
+				A1DDC13C15E09FCA0027807A /* AppDelegate.m */,
+				A1DDC14515E09FCA0027807A /* RootViewController.h */,
+				A1DDC14615E09FCA0027807A /* RootViewController.m */,
+				A1DDC14D15E09FD60027807A /* Supporting Files */,
+			);
+			name = Example;
+			sourceTree = "<group>";
+		};
+		A1DDC14D15E09FD60027807A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1DDC14015E09FCA0027807A /* InfoPlist.strings */,
+				A1DDC14215E09FCA0027807A /* FGSortSegmentedControlExample-Info.plist */,
+				A1DDC14315E09FCA0027807A /* FGSortSegmentedControlExample-Prefix.pch */,
+				A1DDC14415E09FCA0027807A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A14659CD15C319CB0059B6E1 /* FGSortSegmentedControlExampleExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A14659E115C319CB0059B6E1 /* Build configuration list for PBXNativeTarget "FGSortSegmentedControlExampleExample" */;
+			buildPhases = (
+				A14659CA15C319CB0059B6E1 /* Sources */,
+				A14659CB15C319CB0059B6E1 /* Frameworks */,
+				A14659CC15C319CB0059B6E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FGSortSegmentedControlExampleExample;
+			productName = FGSortSegmentedControlExample;
+			productReference = A14659CE15C319CB0059B6E1 /* FGSortSegmentedControlExampleExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FGSortSegmentedControlExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A14659CD15C319CB0059B6E1 /* FGSortSegmentedControlExampleExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A14659CC15C319CB0059B6E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1DDC14915E09FCA0027807A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A14659CA15C319CB0059B6E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A118984715E09F1200DFF0C6 /* FGSortSegmentedControl.m in Sources */,
+				A1DDC14715E09FCA0027807A /* AppDelegate.m in Sources */,
+				A1DDC14B15E09FCA0027807A /* main.m in Sources */,
+				A1DDC14C15E09FCA0027807A /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A1DDC14015E09FCA0027807A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1DDC14115E09FCA0027807A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A14659DF15C319CB0059B6E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/FGSortSegmentedControlExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = FGSortSegmentedControlExampleExample;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A14659E015C319CB0059B6E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/FGSortSegmentedControlExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = FGSortSegmentedControlExampleExample;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = iphoneos;
+				VALID_ARCHS = armv7;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALID_ARCHS = armv7;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A14659E115C319CB0059B6E1 /* Build configuration list for PBXNativeTarget "FGSortSegmentedControlExampleExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A14659DF15C319CB0059B6E1 /* Debug */,
+				A14659E015C319CB0059B6E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FGSortSegmentedControlExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
