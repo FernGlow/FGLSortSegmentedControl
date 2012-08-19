@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>FGSortSegmentedControl by FernGlow</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="without-description">
+        <h1>FGSortSegmentedControl</h1>
+        <p></p>
+        <p class="view"><a href="https://github.com/FernGlow/FGSortSegmentedControl">View the Project on GitHub <small>FernGlow/FGSortSegmentedControl</small></a></p>
+        <ul>
+          <li><a href="https://github.com/FernGlow/FGSortSegmentedControl/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/FernGlow/FGSortSegmentedControl/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/FernGlow/FGSortSegmentedControl">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><a href="http://fernglow.github.com/FGSortSegmentedControl/Documentation/html/Classes/FGSortSegmentedControl.html">FGSortSegmentedControl</a> is a <a href="http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UISegmentedControl_Class/Reference/UISegmentedControl.html">UISegmentedControl</a> subclass that appends an ascending or descending string to the selected segment's title.</p>
+
+<h2>Screenshots</h2>
+
+<p><img src="http://fernglow.github.com/FGSortSegmentedControl/images/FGSortSegmentedControl.gif"></p>
+
+<h2>Getting Started</h2>
+
+<h3>1. Create a sort segmented control</h3>
+
+<div class="highlight"><pre><span class="n">self</span><span class="p">.</span><span class="n">segmentedControl</span> <span class="o">=</span> <span class="p">[[</span><span class="n">FGSortSegmentedControl</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithItems:</span><span class="err">@</span><span class="p">[</span><span class="s">@"Name"</span><span class="p">,</span><span class="s">@"Date"</span><span class="p">,</span><span class="s">@"Size"</span><span class="p">]];</span>
+<span class="n">self</span><span class="p">.</span><span class="n">segmentedControl</span><span class="p">.</span><span class="n">segmentedControlStyle</span> <span class="o">=</span> <span class="n">UISegmentedControlStyleBar</span><span class="p">;</span>
+</pre></div>
+
+<h3>2. Insert the segmented control into the desired view</h3>
+
+<div class="highlight"><pre><span class="n">self</span><span class="p">.</span><span class="n">navigationItem</span><span class="p">.</span><span class="n">titleView</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">segmentedControl</span><span class="p">;</span>
+</pre></div>
+
+<p>The segmented control can be placed in any view.</p>
+
+<ul>
+<li>As the titleView property of a UINavigationController</li>
+<li>As a UIBarButtonItem in a UIToolbar</li>
+<li>As subview of another view</li>
+</ul><h3>3. Add a target and action to the segmented control for the value changed control event.</h3>
+
+<div class="highlight"><pre><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">segmentedControl</span> <span class="nl">addTarget:</span><span class="n">self</span> <span class="nl">action:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">updateSortingInformation:</span><span class="p">)</span> <span class="nl">forControlEvents:</span><span class="n">UIControlEventValueChanged</span><span class="p">];</span>
+</pre></div>
+
+<h3>4. Implement the action method specified above</h3>
+
+<div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">updateSortingInformation:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">sender</span>
+<span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"Index %d (%@)"</span><span class="p">,</span> <span class="p">[</span><span class="n">sender</span> <span class="n">selectedSegmentIndex</span><span class="p">],</span> <span class="p">[</span><span class="n">sender</span> <span class="n">isAscending</span><span class="p">]</span> <span class="o">?</span> <span class="s">@"Ascending"</span> <span class="o">:</span> <span class="s">@"Descending"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2>Documentation</h2>
+
+<p>Read the <a href="http://fernglow.github.com/FGSortSegmentedControl/Documentation/html/index.html">full documentation</a></p>
+
+<h2>Requirements</h2>
+
+<ul>
+<li>iOS 5.1.1</li>
+<li>Apple LLVM 4.0+ (ARC, auto-synthesize, literals and subscripting)</li>
+</ul><h2>Contributions</h2>
+
+<p>Feel free to fork and submit pull requests. This project is very early in development and I'm open to any improvements.</p>
+
+<h2>License</h2>
+
+<p>FGSortSegmentedControl is available under the MIT license. See the LICENSE file for more info.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/FernGlow">FernGlow</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
