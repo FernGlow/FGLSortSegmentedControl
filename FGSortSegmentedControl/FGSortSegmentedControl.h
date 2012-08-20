@@ -27,6 +27,8 @@
 
 /**
  The string to use to signify a descending selection
+ 
+ The default descendingString is unicode 25BC ▼
  */
 @property (nonatomic, strong) NSString *descendingString;
 
@@ -34,6 +36,7 @@
 /**
  The string to use to signify an ascending selection
 
+ The default ascendingString is unicode 225B2 ▲
  */
 @property (nonatomic, strong) NSString *ascendingString;
 
@@ -46,8 +49,6 @@
  
  @param items An array of NSString*s segment titles
  @return An initialized sort segmented control
-
- The default ascendingString is unicode 225B2 ▲ and the default descendingString is unicode 25BC ▼
  */
 - (id)initWithItems:(NSArray *)items;
 
@@ -70,9 +71,9 @@
 /**
  The ordering of the currently selected segment.
  
- @return YES if the current selection is ascending, NO if descending.
- 
  Setting this property changes the ordering of the currently selected segment. The default value is NO.
+
+ @return YES if the current selection is ascending, NO if descending. 
  */
 @property (nonatomic, assign, getter = isAscending) BOOL ascending;
 
