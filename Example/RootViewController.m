@@ -42,7 +42,7 @@
 	self.navigationItem.titleView = self.segmentedControl;
 	
 	// Add an a target and action to the segmented control for the value changed control event.
-	[self.segmentedControl addTarget:self action:@selector(updateSortingInformation:) forControlEvents:UIControlEventValueChanged];
+	[self.segmentedControl addTarget:self action:@selector(updateSortingInformation:) forControlEvents:UIControlEventValueChanged];	
 }
 
 - (void)updateSortingInformation:(id)sender
@@ -52,6 +52,11 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc
+{
+	self.segmentedControl = nil;
 }
 
 @end
