@@ -121,23 +121,38 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 	return (self.isAscending) ? self.ascendingString : self.descendingString;
 }
 
-- (BOOL)sortStringContainedInSegmentAtIndex:(NSInteger)segmentIndex
+- (NSRange)rangeOfSortStringContainedInSegmentAtIndex:(NSInteger)segmentIndex
 {
 	NSAssert([self.ascendingString length] > 0, @"ascendingString must not be an empty string.");
 	NSAssert([self.descendingString length] > 0, @"descendingString must not be an empty string.");
 	NSString *title = [super titleForSegmentAtIndex:segmentIndex];
-	NSRange sortStringRange = [title rangeOfString:[self sortString]];
-	BOOL sortStringFound = (sortStringRange.location != NSNotFound) && [[title substringWithRange:sortStringRange] isEqualToString:[self sortString]];
-	return sortStringFound;
+	
+	NSRange ascendingStringRange = [title rangeOfString:self.ascendingString];
+	NSRange descendingStringRange = [title rangeOfString:self.descendingString];
+
+	if (ascendingStringRange.location != NSNotFound) {
+		return ascendingStringRange;
+	} else if (descendingStringRange.location != NSNotFound) {
+		return descendingStringRange;
+	} else {
+		return NSMakeRange(NSNotFound, 0);
+	}
 }
 
+/**
+ Returns the title without the ascending or descending sorting string
+ */
 - (NSString *)baseTitleForSegmentAtIndex:(NSInteger)segmentIndex
 {
-	NSString *title = [super titleForSegmentAtIndex:segmentIndex];
-    if ([self sortStringContainedInSegmentAtIndex:segmentIndex]) {
-        title = [title substringWithRange:NSMakeRange(0, [title length]-[[self sortString] length])];
+	NSMutableString *title = [[super titleForSegmentAtIndex:segmentIndex] mutableCopy];
+	NSRange sortStringRange = [self rangeOfSortStringContainedInSegmentAtIndex:segmentIndex];
+	
+    if (sortStringRange.location != NSNotFound) {
+		[title replaceCharactersInRange:sortStringRange withString:@""];
     }
-    return title;
+	
+    return (NSString *)title;
+}
 }
 
 #pragma mark - Override (disable)
