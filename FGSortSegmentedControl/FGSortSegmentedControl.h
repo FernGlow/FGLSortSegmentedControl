@@ -45,7 +45,8 @@
  Initializes the segmented control with an array of items and the default ascending and descending strings.
  
  @param items An array of NSString*s segment titles
- 
+ @return An initialized sort segmented control
+
  The default ascendingString is unicode 225B2 ▲ and the default descendingString is unicode 25BC ▼
  */
 - (id)initWithItems:(NSArray *)items;
@@ -57,8 +58,10 @@
  @param items An array of NSString objects to use as segment titles
  @param ascendingString A string to use to signify an ascending selection
  @param descendingString A string to use to signify an descending selection
+ @return An initialized sort segmented control
  */
 - (id)initWithItems:(NSArray *)items ascendingString:(NSString *)ascendingString descendingString:(NSString *)descendingString;
+
 
 /**
  @name Selected Segment Ordering
