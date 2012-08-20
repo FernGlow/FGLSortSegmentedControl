@@ -38,6 +38,8 @@
 	
 	<option value="properties">Properties</option>
 	
+	<option value="//api/name/ascending">&nbsp;&nbsp;&nbsp;&nbsp;ascending</option>
+	
 	<option value="//api/name/ascendingString">&nbsp;&nbsp;&nbsp;&nbsp;ascendingString</option>
 	
 	<option value="//api/name/descendingString">&nbsp;&nbsp;&nbsp;&nbsp;descendingString</option>
@@ -52,8 +54,6 @@
 	<option value="//api/name/initWithItems:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithItems:</option>
 	
 	<option value="//api/name/initWithItems:ascendingString:descendingString:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithItems:ascendingString:descendingString:</option>
-	
-	<option value="//api/name/isAscending">&nbsp;&nbsp;&nbsp;&nbsp;- isAscending</option>
 	
 	
 	
@@ -71,7 +71,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Initializing a Sortable Segmented Control">Initializing a Sortable Segmented Control</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Querying the Selection">Querying the Selection</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Selected Segment Ordering">Selected Segment Ordering</a></span></li>
 	
 </ul></li>
 
@@ -80,6 +80,8 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ascending">ascending</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ascendingString">ascendingString</a></span></li>
 	
@@ -96,8 +98,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithItems:">initWithItems:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithItems:ascendingString:descendingString:">initWithItems:ascendingString:descendingString:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isAscending">isAscending</a></span></li>
 	
 </ul></li>
 
@@ -154,7 +154,7 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/ascendingString">&nbsp;&nbsp;ascendingString</a></code>
-		<span class="tooltip"><p>The string to use to signify an ascending selection</p></span>
+		<span class="tooltip"><p>The string to use to signify an <a href="#//api/name/ascending">ascending</a> selection</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -169,14 +169,14 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/initWithItems:">&ndash;&nbsp;initWithItems:</a></code>
-		<span class="tooltip"><p>Initializes the segmented control with an array of items and the default ascending and descending strings.</p></span>
+		<span class="tooltip"><p>Initializes the segmented control with an array of items and the default <a href="#//api/name/ascending">ascending</a> and descending strings.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/initWithItems:ascendingString:descendingString:">&ndash;&nbsp;initWithItems:ascendingString:descendingString:</a></code>
-		<span class="tooltip"><p>Initializes the segmented control with an array of items and the specified ascending and descending strings.</p></span>
+		<span class="tooltip"><p>Initializes the segmented control with an array of items and the specified <a href="#//api/name/ascending">ascending</a> and descending strings.</p></span>
 	</span>
 	
 	
@@ -184,16 +184,16 @@
 						</ul>
 						
 						
-						<a title="Querying the Selection" name="task_Querying the Selection"></a>
-						<h3 class="subsubtitle task-title">Querying the Selection</h3>
+						<a title="Selected Segment Ordering" name="task_Selected Segment Ordering"></a>
+						<h3 class="subsubtitle task-title">Selected Segment Ordering</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/isAscending">&ndash;&nbsp;isAscending</a></code>
-		<span class="tooltip"><p>Returns YES if the current selection is ascending, NO if descending.</p></span>
+		<code><a href="#//api/name/ascending">&nbsp;&nbsp;ascending</a></code>
+		<span class="tooltip"><p>The ordering of the currently selected segment.</p></span>
 	</span>
-	
+	<span class="task-item-suffix">property</span>
 	
 </li>
 						</ul>
@@ -209,13 +209,56 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/ascending" title="ascending"></a>
+	<h3 class="subsubtitle method-title">ascending</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The ordering of the currently selected segment.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, getter=isAscending) BOOL ascending</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the current selection is ascending, NO if descending.</p>
+
+<p>Setting this property changes the ordering of the currently selected segment. The default value is NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">FGSortSegmentedControl.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/ascendingString" title="ascendingString"></a>
 	<h3 class="subsubtitle method-title">ascendingString</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The string to use to signify an ascending selection</p>
+		<p>The string to use to signify an <a href="#//api/name/ascending">ascending</a> selection</p>
 	</div>		
 	
     
@@ -297,7 +340,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Initializes the segmented control with an array of items and the default ascending and descending strings.</p>
+		<p>Initializes the segmented control with an array of items and the default <a href="#//api/name/ascending">ascending</a> and descending strings.</p>
 	</div>		
 	
     
@@ -311,14 +354,19 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>items</em></dt>
-			<dd><p>An array of NSString*s segment titles</p>
-
-<p>The default <a href="#//api/name/ascendingString">ascendingString</a> is unicode 225B2 ▲ and the default <a href="#//api/name/descendingString">descendingString</a> is unicode 25BC ▼</p></dd>
+			<dd><p>An array of NSString*s segment titles</p></dd>
 		</dl>
 		
 	</div>
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An initialized sort segmented control</p>
+
+<p>The default <a href="#//api/name/ascendingString">ascendingString</a> is unicode 225B2 ▲ and the default <a href="#//api/name/descendingString">descendingString</a> is unicode 25BC ▼</p>
+	</div>
 	
 	
 	
@@ -345,7 +393,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Initializes the segmented control with an array of items and the specified ascending and descending strings.</p>
+		<p>Initializes the segmented control with an array of items and the specified <a href="#//api/name/ascending">ascending</a> and descending strings.</p>
 	</div>		
 	
     
@@ -364,7 +412,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>ascendingString</em></dt>
-			<dd><p>A string to use to signify an ascending selection</p></dd>
+			<dd><p>A string to use to signify an <a href="#//api/name/ascending">ascending</a> selection</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -376,41 +424,10 @@
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">FGSortSegmentedControl.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/isAscending" title="isAscending"></a>
-	<h3 class="subsubtitle method-title">isAscending</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns YES if the current selection is ascending, NO if descending.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (BOOL)isAscending</code></div>
-
-    
-	
-	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An initialized sort segmented control</p>
+	</div>
 	
 	
 	
@@ -443,7 +460,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Fern Glow, LLC. All rights reserved. (Last updated: 2012-08-18)</span><br />
+						<p><span class="copyright">&copy; 2012 Fern Glow, LLC. All rights reserved. (Last updated: 2012-08-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

@@ -64,12 +64,12 @@
 			<Parameters>
 				<Parameter>
 					<Name>items</Name>
-					<Abstract type="html">An array of NSString*s segment titles
-
-The default ascendingString is unicode 225B2 ▲ and the default descendingString is unicode 25BC ▼</Abstract>
+					<Abstract type="html">An array of NSString*s segment titles</Abstract>
 				</Parameter>
 			</Parameters>
-			
+			<ReturnValue><Abstract type="html">An initialized sort segmented control
+
+The default ascendingString is unicode 225B2 ▲ and the default descendingString is unicode 25BC ▼</Abstract></ReturnValue>
 			<Anchor>//api/name/initWithItems:</Anchor>
 		</Token>
 		
@@ -91,19 +91,34 @@ The default ascendingString is unicode 225B2 ▲ and the default descendingStrin
 					<Abstract type="html">A string to use to signify an descending selection</Abstract>
 				</Parameter>
 			</Parameters>
-			
+			<ReturnValue><Abstract type="html">An initialized sort segmented control</Abstract></ReturnValue>
 			<Anchor>//api/name/initWithItems:ascendingString:descendingString:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/FGSortSegmentedControl/isAscending</TokenIdentifier>
-			<Abstract type="html">Returns YES if the current selection is ascending, NO if descending.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/FGSortSegmentedControl/setAscending:</TokenIdentifier>
+			<Abstract type="html">The ordering of the currently selected segment.</Abstract>
 			<DeclaredIn>FGSortSegmentedControl.h</DeclaredIn>			
 			
-			<Declaration>- (BOOL)isAscending</Declaration>
+			<Declaration>@property (nonatomic, assign, getter=isAscending) BOOL ascending</Declaration>
 			
+			<ReturnValue><Abstract type="html">YES if the current selection is ascending, NO if descending.
+
+Setting this property changes the ordering of the currently selected segment. The default value is NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/ascending</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/FGSortSegmentedControl/ascending</TokenIdentifier>
+			<Abstract type="html">The ordering of the currently selected segment.</Abstract>
+			<DeclaredIn>FGSortSegmentedControl.h</DeclaredIn>			
 			
-			<Anchor>//api/name/isAscending</Anchor>
+			<Declaration>@property (nonatomic, assign, getter=isAscending) BOOL ascending</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the current selection is ascending, NO if descending.
+
+Setting this property changes the ordering of the currently selected segment. The default value is NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/ascending</Anchor>
 		</Token>
 		
 	</File>
