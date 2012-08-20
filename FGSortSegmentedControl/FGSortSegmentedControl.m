@@ -33,6 +33,11 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 
 #pragma mark - Initialization & Lifecycle
 
+- (id)init
+{
+	return [self initWithItems:@[] ascendingString:kDefaultAscendingArrowString descendingString:kDefaultDescendingArrowString];
+}
+
 - (id)initWithItems:(NSArray *)items
 {
 	return [self initWithItems:items ascendingString:kDefaultAscendingArrowString descendingString:kDefaultDescendingArrowString];
