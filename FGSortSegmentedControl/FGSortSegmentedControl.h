@@ -61,12 +61,16 @@
 - (id)initWithItems:(NSArray *)items ascendingString:(NSString *)ascendingString descendingString:(NSString *)descendingString;
 
 /**
- @name Querying the Selection
+ @name Selected Segment Ordering
  */
 
 /**
- Returns YES if the current selection is ascending, NO if descending.
+ The ordering of the currently selected segment.
+ 
+ @return YES if the current selection is ascending, NO if descending.
+ 
+ Setting this property changes the ordering of the currently selected segment.
  */
-- (BOOL)isAscending;
+@property (nonatomic, assign) BOOL isAscending;
 
 @end

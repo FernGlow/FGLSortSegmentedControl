@@ -27,7 +27,6 @@ static NSString *const kDefaultDescendingArrowString = @" \u25BC";	// ▼
 static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 
 @interface FGSortSegmentedControl()
-@property (nonatomic, assign) BOOL isAscending;
 @end
 
 @implementation FGSortSegmentedControl
@@ -86,7 +85,13 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 
 #pragma mark - Internal (private)
 
-- (void)adjustSegmentTitles
+- (void)setIsAscending:(BOOL)ascending
+{
+	_isAscending = ascending;
+	[self updateSegmentTitles];
+	[self sendActionsForControlEvents:UIControlEventValueChanged];
+}
+
 {
     for (NSInteger i = 0; i < [self numberOfSegments]; i++) {
         NSString *title = [self baseTitleForSegmentAtIndex:i];
