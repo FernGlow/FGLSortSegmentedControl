@@ -72,8 +72,8 @@
  
  @return YES if the current selection is ascending, NO if descending.
  
- Setting this property changes the ordering of the currently selected segment.
+ Setting this property changes the ordering of the currently selected segment. The default value is NO.
  */
-@property (nonatomic, assign) BOOL isAscending;
+@property (nonatomic, assign, getter = isAscending) BOOL ascending;
 
 @end

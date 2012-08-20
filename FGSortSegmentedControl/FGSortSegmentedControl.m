@@ -63,6 +63,8 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 
 - (void)awakeFromNib
 {
+	self.ascendingString = kDefaultAscendingArrowString;
+	self.descendingString = kDefaultDescendingArrowString;
 	[self sharedInit];
 }
 
@@ -72,7 +74,7 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
     tapGestureRecognizer.numberOfTapsRequired = 1;
     tapGestureRecognizer.numberOfTouchesRequired = 1;
     [self addGestureRecognizer:tapGestureRecognizer];
-	self.isAscending = NO;
+	self.ascending = NO;
 	self.previousSelectedSegmentIndex = NSNotFound;
 	self.selectedSegmentIndex = 0;
 }
@@ -86,8 +88,8 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 
 - (void)segmentTapped:(id)sender
 {
-	if (self.previousSelectedSegmentIndex == self.selectedSegmentIndex) {
-		_isAscending = !self.isAscending;
+	if (sender != nil && self.previousSelectedSegmentIndex == self.selectedSegmentIndex) {
+		_ascending = !self.isAscending;
 		[self updateSegmentTitles];
 		[self sendActionsForControlEvents:UIControlEventValueChanged];
 	} else {
@@ -98,9 +100,9 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 
 #pragma mark - Internal (private)
 
-- (void)setIsAscending:(BOOL)ascending
+- (void)setAscending:(BOOL)ascending
 {
-	_isAscending = ascending;
+	_ascending = ascending;
 	[self updateSegmentTitles];
 	[self sendActionsForControlEvents:UIControlEventValueChanged];
 }
@@ -159,7 +161,7 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 - (void)setSelectedSegmentIndex:(NSInteger)selectedSegmentIndex
 {
 	[super setSelectedSegmentIndex:selectedSegmentIndex];
-	[self segmentTapped:self];
+	[self segmentTapped:nil];
 }
 
 #pragma mark - Override (disable)

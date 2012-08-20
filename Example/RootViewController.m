@@ -37,7 +37,7 @@
 	// Create a sort segmented control
 	self.segmentedControl = [[FGSortSegmentedControl alloc] initWithItems:@[@"Name",@"Date",@"Size"]];
 	self.segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
-
+	
 	// Add the segmented control to the navigation controller's titleView
 	self.navigationItem.titleView = self.segmentedControl;
 	
