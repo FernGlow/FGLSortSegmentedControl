@@ -153,6 +153,13 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 	
     return (NSString *)title;
 }
+
+#pragma mark - Override
+
+- (void)setSelectedSegmentIndex:(NSInteger)selectedSegmentIndex
+{
+	[super setSelectedSegmentIndex:selectedSegmentIndex];
+	[self segmentTapped:self];
 }
 
 #pragma mark - Override (disable)
