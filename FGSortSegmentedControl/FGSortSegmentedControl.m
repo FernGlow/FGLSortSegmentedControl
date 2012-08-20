@@ -27,6 +27,7 @@ static NSString *const kDefaultDescendingArrowString = @" \u25BC";	// ▼
 static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 
 @interface FGSortSegmentedControl()
+@property (nonatomic, assign) NSInteger previousSelectedSegmentIndex;
 @end
 
 @implementation FGSortSegmentedControl
@@ -72,8 +73,8 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
     tapGestureRecognizer.numberOfTouchesRequired = 1;
     [self addGestureRecognizer:tapGestureRecognizer];
 	self.isAscending = NO;
+	self.previousSelectedSegmentIndex = NSNotFound;
 	self.selectedSegmentIndex = 0;
-	[self segmentTapped:self];
 }
 
 - (void)dealloc
@@ -85,7 +86,14 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 
 - (void)segmentTapped:(id)sender
 {
-    [self adjustSegmentTitles];
+	if (self.previousSelectedSegmentIndex == self.selectedSegmentIndex) {
+		_isAscending = !self.isAscending;
+		[self updateSegmentTitles];
+		[self sendActionsForControlEvents:UIControlEventValueChanged];
+	} else {
+		[self updateSegmentTitles];
+	}
+	self.previousSelectedSegmentIndex = self.selectedSegmentIndex;
 }
 
 #pragma mark - Internal (private)
@@ -97,28 +105,20 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 	[self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
+- (void)updateSegmentTitles
 {
     for (NSInteger i = 0; i < [self numberOfSegments]; i++) {
-        NSString *title = [self baseTitleForSegmentAtIndex:i];
-		
-        if (i == [self selectedSegmentIndex])
-		{
-			if ([self sortStringContainedInSegmentAtIndex:i]) {
-				title = [NSString stringWithFormat:@"%@%@", title, (self.isAscending) ? self.descendingString : self.ascendingString];
-				self.isAscending = !self.isAscending;
-				[self sendActionsForControlEvents:UIControlEventValueChanged];
-			} else {
-				title = [NSString stringWithFormat:@"%@%@", title, (self.isAscending) ? self.ascendingString : self.descendingString];
-			}
-		}
-        
-		[self setTitle:title forSegmentAtIndex:i];
+		[self setTitle:[self sortTitleForSegmentAtIndex:i] forSegmentAtIndex:i];
     }
 }
 
-- (NSString *)sortString
+- (NSString *)sortTitleForSegmentAtIndex:(NSUInteger)segment
 {
-	return (self.isAscending) ? self.ascendingString : self.descendingString;
+	NSString *title = [self baseTitleForSegmentAtIndex:segment];
+	if (segment == [self selectedSegmentIndex]) {
+		title = [NSString stringWithFormat:@"%@%@", title, (self.isAscending) ? self.ascendingString : self.descendingString];
+	}
+	return title;
 }
 
 - (NSRange)rangeOfSortStringContainedInSegmentAtIndex:(NSInteger)segmentIndex
