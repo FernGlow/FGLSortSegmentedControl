@@ -1,8 +1,8 @@
 //
-//  FGSortSegmentedControl.h
-//  FGSortSegmentedControl
+//  FGLSortSegmentedControl.h
+//  FGLSortSegmentedControl
 //
-//  Copyright (c) 2012 Fern Glow, LLC (http://fernglow.com) All rights reserved.
+//  Copyright (c) 2013 Fern Glow, LLC (http://fernglow.com) All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy of
 //  this software and associated documentation files (the "Software"), to deal in
@@ -23,7 +23,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FGSortSegmentedControl : UISegmentedControl
+@interface FGLSortSegmentedControl : UISegmentedControl
 
 /**
  The string to use to signify a descending selection

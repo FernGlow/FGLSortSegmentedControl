@@ -1,8 +1,8 @@
 //
-//  FGSortSegmentedControl.m
-//  FGSortSegmentedControl
+//  FGLSortSegmentedControl.m
+//  FGLSortSegmentedControl
 //
-//  Copyright (c) 2012 Fern Glow, LLC (http://fernglow.com) All rights reserved.
+//  Copyright (c) 2013 Fern Glow, LLC (http://fernglow.com) All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy of
 //  this software and associated documentation files (the "Software"), to deal in
@@ -21,16 +21,16 @@
 //  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "FGSortSegmentedControl.h"
+#import "FGLSortSegmentedControl.h"
 
 static NSString *const kDefaultDescendingArrowString = @" \u25BC";	// ▼
 static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 
-@interface FGSortSegmentedControl()
+@interface FGLSortSegmentedControl()
 @property (nonatomic, assign) NSInteger previousSelectedSegmentIndex;
 @end
 
-@implementation FGSortSegmentedControl
+@implementation FGLSortSegmentedControl
 
 #pragma mark - Initialization & Lifecycle
 
@@ -70,18 +70,11 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 
 - (void)sharedInit
 {
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(segmentTapped:)];
-    tapGestureRecognizer.numberOfTapsRequired = 1;
-    tapGestureRecognizer.numberOfTouchesRequired = 1;
-    [self addGestureRecognizer:tapGestureRecognizer];
 	self.ascending = NO;
 	self.previousSelectedSegmentIndex = NSNotFound;
 	self.selectedSegmentIndex = 0;
-}
-
-- (void)dealloc
-{
-    [self removeGestureRecognizer:[[self gestureRecognizers] lastObject]];
+	[self segmentTapped:nil];
+	[self addTarget:self action:@selector(segmentTapped:) forControlEvents:UIControlEventValueChanged];
 }
 
 #pragma mark - Target/Action
@@ -90,11 +83,9 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 {
 	if (sender != nil && self.previousSelectedSegmentIndex == self.selectedSegmentIndex) {
 		_ascending = !self.isAscending;
-		[self updateSegmentTitles];
-		[self sendActionsForControlEvents:UIControlEventValueChanged];
-	} else {
-		[self updateSegmentTitles];
 	}
+	
+	[self updateSegmentTitles];
 	self.previousSelectedSegmentIndex = self.selectedSegmentIndex;
 }
 
@@ -104,7 +95,7 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 {
 	_ascending = ascending;
 	[self updateSegmentTitles];
-	[self sendActionsForControlEvents:UIControlEventValueChanged];
+	[self segmentTapped:nil];
 }
 
 - (void)updateSegmentTitles
@@ -131,7 +122,7 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
 	
 	NSRange ascendingStringRange = [title rangeOfString:self.ascendingString];
 	NSRange descendingStringRange = [title rangeOfString:self.descendingString];
-
+	
 	if (ascendingStringRange.location != NSNotFound) {
 		return ascendingStringRange;
 	} else if (descendingStringRange.location != NSNotFound) {
@@ -156,12 +147,21 @@ static NSString *const kDefaultAscendingArrowString  = @" \u25B2";	// ▲
     return (NSString *)title;
 }
 
-#pragma mark - Override
-
 - (void)setSelectedSegmentIndex:(NSInteger)selectedSegmentIndex
 {
 	[super setSelectedSegmentIndex:selectedSegmentIndex];
-	[self segmentTapped:nil];
+	[self segmentTapped:self];
+}
+
+#pragma mark - Override
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	NSInteger previousIndex = self.selectedSegmentIndex;
+    [super touchesEnded:touches withEvent:event];
+    if (previousIndex == self.selectedSegmentIndex) {
+        [self sendActionsForControlEvents:UIControlEventValueChanged];
+	}
 }
 
 #pragma mark - Override (disable)

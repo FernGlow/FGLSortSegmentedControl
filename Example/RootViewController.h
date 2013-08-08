@@ -1,8 +1,8 @@
 //
 //  RootViewController.h
-//  FGSortSegmentedControlExample
+//  FGLSortSegmentedControlExample
 //
-//  Copyright (c) 2012 Fern Glow, LLC (http://fernglow.com) All rights reserved.
+//  Copyright (c) 2013 Fern Glow, LLC (http://fernglow.com) All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy of
 //  this software and associated documentation files (the "Software"), to deal in
@@ -22,10 +22,10 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
-#import "FGSortSegmentedControl.h"
+#import "FGLSortSegmentedControl.h"
 
 @interface RootViewController : UIViewController
 
-@property (nonatomic, strong) FGSortSegmentedControl *segmentedControl;
+@property (nonatomic, strong) FGLSortSegmentedControl *segmentedControl;
 
 @end

@@ -1,8 +1,8 @@
 //
 //  RootViewController.m
-//  FGSortSegmentedControlExample
+//  FGLSortSegmentedControlExample
 //
-//  Copyright (c) 2012 Fern Glow, LLC (http://fernglow.com) All rights reserved.
+//  Copyright (c) 2013 Fern Glow, LLC (http://fernglow.com) All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy of
 //  this software and associated documentation files (the "Software"), to deal in
@@ -22,7 +22,7 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import "RootViewController.h"
-#import "FGSortSegmentedControl.h"
+#import "FGLSortSegmentedControl.h"
 
 @implementation RootViewController
 
@@ -35,14 +35,14 @@
     [super viewDidLoad];
 	
 	// Create a sort segmented control
-	self.segmentedControl = [[FGSortSegmentedControl alloc] initWithItems:@[@"Name",@"Date",@"Size"]];
+	self.segmentedControl = [[FGLSortSegmentedControl alloc] initWithItems:@[@"Name",@"Date",@"Size"]];
 	self.segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
 	
 	// Add the segmented control to the navigation controller's titleView
 	self.navigationItem.titleView = self.segmentedControl;
 	
 	// Add an a target and action to the segmented control for the value changed control event.
-	[self.segmentedControl addTarget:self action:@selector(updateSortingInformation:) forControlEvents:UIControlEventValueChanged];	
+	[self.segmentedControl addTarget:self action:@selector(updateSortingInformation:) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)updateSortingInformation:(id)sender
