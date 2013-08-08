@@ -2,7 +2,7 @@
 
 ## Screenshots
 
-<img src="http://fernglow.github.com/FGLSortSegmentedControl/images/FGLSortSegmentedControl.gif">
+<img src="https://github.com/FernGlow/FGLSortSegmentedControl/blob/gh-pages/images/FGSortSegmentedControl.gif">
 
 ## Getting Started
 
